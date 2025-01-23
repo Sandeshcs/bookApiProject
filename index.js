@@ -10,6 +10,15 @@ app.listen(PORT, () => {
     console.log("server running on ", PORT);
 });
 
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 //1,2. function to create new book.
 const createNewBook = async (newBook) => {
     try{

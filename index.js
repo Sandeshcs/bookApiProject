@@ -60,7 +60,7 @@ const readAllBooks = async () => {
     }
 };
 
-app.get("/books", async (req, res) => {
+app.get("/allbooks", async (req, res) => {
     try{
         const allBooks = await readAllBooks();
         if(allBooks.length > 0){

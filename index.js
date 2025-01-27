@@ -227,7 +227,7 @@ app.post("/books/updates/:bookTitle", async (req, res) => {
 //10. function to delete book by id.
 const deleteBookById = async (bookId) => {
     try{
-        const bookFound = await Book.findOneAndDelete(bookId, {new: true});
+        const bookFound = await Book.findByIdAndDelete(bookId, {new: true});
         return bookFound;    
     }
     catch (error) {
@@ -235,7 +235,7 @@ const deleteBookById = async (bookId) => {
     }
 };
 
-app.post("/books/delete/:bookId", async (req, res) => {
+app.delete("/books/delete/:bookId", async (req, res) => {
     try{
         const bookDeleteFound = await deleteBookById(req.params.bookId);
         if(bookDeleteFound){

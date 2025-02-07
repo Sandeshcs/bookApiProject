@@ -174,7 +174,7 @@ app.get("/books/year/:bookYear", async (req, res) => {
     }
 });
 
-//8. function to update lean in book rating.
+//8. function to update leanin book rating.
 const updateBookByRating = async (bookId, bookRating) => {
     try{
         const booksFound = await Book.findByIdAndUpdate(bookId, bookRating, {new: true});
